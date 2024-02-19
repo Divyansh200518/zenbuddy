@@ -6,6 +6,8 @@ Backend is made using Node js:
 
 ## Clone the repository
 
+Open a terminal in the folder where u want to clone the repository
+
 ```bash
 git clone https://github.com/Divyansh200518/zenbuddy.git
 ```
