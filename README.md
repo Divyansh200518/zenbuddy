@@ -14,21 +14,29 @@ git clone https://github.com/Divyansh200518/zenbuddy.git
 
 ## Getting Started
 
-First, to run the frontend:
+Firstly get inside the cloned repository by :
 
 ```bash
 cd ./zenbuddy
-npm install //For the first time only!
+```
+
+Now, to run the frontend:
+
+```bash
+cd ./zenbuddyfrontend
+npm install #For the first time only!
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-After running the frontend run the backend.
+After running the frontend run the backend.<br>
+
+###### (you might need a new terminal to run the backend)
 
 ```bash
 cd ./zenbuddybackend
-npm install //For the first time only!
+npm install #For the first time only!
 node server.js
 ```
 
