@@ -152,7 +152,7 @@
 }
 
 .navbar {
-	/* position: relative; */
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -253,4 +253,113 @@
 		width: fit-content;
 		/* width: 100%; */
 	}
+
+	.dashboard-popup-box-todo-list,
+	.dashboard-popup-box-meditation,
+	.dashboard-popup-box-journal {
+		flex-direction: column;
+		gap: 7px;
+		justify-content: center;
+		align-items: center;
+		padding-left: 0px;
+	}
+
+	.dashboard-popup-box-todo-heading {
+		font-size: 15px;
+		gap: 0px;
+		justify-content: center;
+		align-items: center;
+	}
+	.dashboard-popup-box-todo-list-svg {
+		height: 80%;
+		width: 25%;
+		/* gap: 0px; */
+		padding-right: 30px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dashboard-popup-box {
+		padding-bottom: 0px;
+	}
+}
+
+/* .dashboard-popup-container {
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: aqua;
+} */
+
+.dashboard-popup-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 250px;
+	width: 300px;
+	background-color: #393e46;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0;
+	/* padding-top: 5px; */
+	/* padding-bottom: 10px; */
+	top: 50%;
+	left: 120%;
+	transform: translateY(-50%);
+	z-index: 10;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-popup-box-todo-list,
+.dashboard-popup-box-meditation,
+.dashboard-popup-box-journal {
+	height: 25%;
+	width: 90%;
+	/* background-color: red; */
+	border-radius: 20px;
+	display: flex;
+	padding: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 30px;
+	padding-left: 10px;
+	cursor: pointer;
+	/* padding-top: 5px; */
+}
+
+.dashboard-popup-box-todo-list-svg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 30%;
+	/* background-color: burlywood; */
+}
+
+.dashboard-popup-box-todo-heading {
+	height: 100%;
+	width: 80%;
+	/* background-color: brown; */
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.dashboard-popup-box-todo-list:hover,
+.dashboard-popup-box-meditation:hover,
+.dashboard-popup-box-journal:hover {
+	background-color: #60656e;
 }
