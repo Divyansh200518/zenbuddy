@@ -1058,6 +1058,236 @@ select option {
 	align-self: flex-start;
 }
 
+.breath-theme-body-wrapper {
+	/* position:absolute; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	gap: 20px;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(173, 216, 230, 1);
+	/* background-color: rgba(255, 192, 203, 1); */
+	background-color: rgba(176, 196, 160, 1);
+	animation: backgroundTheme 20s infinite linear;
+}
+
+.breath-theme-body-heading {
+	/* position: absolute; */
+	position: relative;
+	height: 50px;
+	width: 90%;
+	display: flex;
+	/* opacity: 0; */
+	/* transition: opacity 3s linear; */
+	align-items: center;
+	justify-content: center;
+	/* background-color: red; */
+}
+
+.breath-theme-body-heading1 {
+	position: absolute;
+	display: flex;
+	animation: backgroundTheme1 3s linear;
+}
+.breath-theme-body-heading2 {
+	position: absolute;
+	display: none;
+	animation: backgroundTheme2 7s 8s linear;
+}
+.breath-theme-body-heading3 {
+	position: absolute;
+	display: none;
+	animation: backgroundTheme3 8s 16s linear;
+}
+
+.breath-theme-body-heading h2 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 100;
+	font-style: normal;
+	font-size: 40px;
+}
+
+.breath-theme-body-circles {
+	height: 350px;
+	width: 90%;
+	/* background-color: yellow; */
+	/* position: absolute; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.breath-theme-body-outer-circle {
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	background-color: rgba(157, 185, 136, 1);
+	/* background-color: #EDA8B4; */
+	background-color: rgba(150, 203, 221, 1);
+	border-radius: 50%;
+	/* animation: breathIn1 3s linear,hold1 7s 8s linear,breathOut1 8s 16s linear ; */
+	animation: breathe1 20s infinite linear;
+}
+
+.breath-theme-body-middle-circle {
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	background-color: rgba(138, 163, 119, 1);
+	/* background-color: #D397A2; */
+	background-color: rgba(129, 187, 206, 1);
+	border-radius: 50%;
+	/* animation:breathIn2 3s linear,hold2 7s 8s linear,breathOut2 8s 16s linear ; */
+	animation: breathe2 20s infinite linear;
+}
+
+.breath-theme-body-inner-circle {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background-color: rgba(119, 142, 101, 1);
+	/* background-color: #B5828B; */
+	background-color: rgba(117, 171, 189, 1);
+	border-radius: 50%;
+	/* animation: breathIn3 3s linear,hold3 7s 8s linear,breathOut3 8s 16s linear ; */
+	animation: breathe3 20s infinite linear;
+}
+
+.breath-theme-body-mute {
+	height: 60px;
+	width: 90%;
+	/* background-color: blueviolet; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.breath-theme-body-mute button {
+	outline: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+@keyframes breathe1 {
+	0% {
+		height: 500px;
+		width: 500px;
+		background-color: #9db988;
+	}
+	16% {
+		height: 300px;
+		width: 300px;
+		background-color: #96cbdd;
+	}
+
+	24% {
+		height: 300px;
+		width: 300px;
+		background-color: #eda8b4;
+	}
+	55% {
+		height: 300px;
+		width: 300px;
+		background-color: #eda8b4;
+	}
+	100% {
+		height: 500px;
+		width: 500px;
+		background-color: #9db988;
+	}
+}
+
+@keyframes breathe2 {
+	0% {
+		height: 400px;
+		width: 400px;
+		background-color: #8aa377;
+	}
+	16% {
+		height: 200px;
+		width: 200px;
+		background-color: #81bbce;
+	}
+
+	24% {
+		height: 200px;
+		width: 200px;
+		background-color: #d397a2;
+	}
+	55% {
+		height: 200px;
+		width: 200px;
+		background-color: #d397a2;
+	}
+	100% {
+		height: 400px;
+		width: 400px;
+		background-color: #8aa377;
+	}
+}
+
+@keyframes breathe3 {
+	0% {
+		height: 300px;
+		width: 300px;
+		background-color: #778e65;
+	}
+	16% {
+		height: 100px;
+		width: 100px;
+		background-color: #75abbd;
+	}
+
+	24% {
+		height: 100px;
+		width: 100px;
+		background-color: #b5828b;
+	}
+	55% {
+		height: 100px;
+		width: 100px;
+		background-color: #b5828b;
+	}
+	100% {
+		height: 300px;
+		width: 300px;
+		background-color: #778e65;
+	}
+}
+
+@keyframes backgroundTheme {
+	0% {
+		/* height: 300px;
+        width:300px;  */
+		background-color: #b0c4a0;
+	}
+	16% {
+		/* height: 100px;
+        width:100px;  */
+		background-color: #add8e6;
+	}
+
+	24% {
+		/* height: 100px;
+        width:100px;  */
+		background-color: #ffc0cb;
+	}
+	55% {
+		/* height: 100px;
+        width:100px;  */
+		background-color: #ffc0cb;
+	}
+	100% {
+		/* height: 300px;
+        width:300px; */
+		background-color: #b0c4a0;
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	.chat-page-navbar {
 		position: absolute;

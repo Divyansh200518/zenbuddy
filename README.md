@@ -43,3 +43,15 @@ node server.js
 The backend will start on [http://localhost:3002](http://localhost:3002)
 
 If everything is set up correctly it should work fine.
+
+### Login Credentials
+
+To start testing you can login using your own email or you can use our email which we created for testing with the credentials:
+
+```
+Email : abc@gmail.com
+```
+
+```
+Password : Abcd1234@
+```

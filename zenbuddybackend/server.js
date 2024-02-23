@@ -44,67 +44,9 @@ app.use(express.json());
 
 var online = {};
 var chats = {};
-var friends = {
-	// "om200518@gmail.com": [
-	// 	{
-	// 		email: "divyansh200518@gmail.com",
-	// 		photoUrl: "",
-	// 		status: "offline",
-	// 		displayName: "Divyansh Vijay",
-	// 	},
-	// 	{
-	// 		email: "priyanshu2004ss@gmail.com",
-	// 		photoUrl: "",
-	// 		status: "offline",
-	// 		displayName: "Priyanshu",
-	// 	},
-	// 	{
-	// 		email: "kunwaraditya0073@gmail.com",
-	// 		photoUrl: "",
-	// 		status: "offline",
-	// 		displayName: "Kunwar Aditya",
-	// 	},
-	// ],
-	// "divyansh200518@gmail.com": [
-	// 	{
-	// 		email: "om200518@gmail.com",
-	// 		photoUrl: "",
-	// 		status: "offline",
-	// 		displayName: "Divyansh Vijay",
-	// 	},
-	// ],
-	// "priyanshu2004ss@gmail.com": [
-	// 	{
-	// 		email: "om200518@gmail.com",
-	// 		photoUrl: "",
-	// 		status: "offline",
-	// 		displayName: "Divyansh Vijay",
-	// 	},
-	// ],
-	// "kunwaraditya0073@gmail.com": [
-	// 	{
-	// 		email: "om200518@gmail.com",
-	// 		photoUrl: "",
-	// 		status: "offline",
-	// 		displayName: "Divyansh Vijay",
-	// 	},
-	// ],
-};
+var friends = {};
 var aiHistory = {};
-// var oldOnline = [];
 
-// setInterval(() => {
-// if (oldOnline != online) {
-// console.log({ online });
-// console.log({ chats });
-// console.log(friends);
-// 	oldOnline = online;
-// }
-// }, 10000);
-
-// setInterval(() => {
-// 	// console.log({ size: io.of("/").sockets.size });
-// }, 1000);
 async function ai(prompt, email) {
 	return new Promise(async (resolve, reject) => {
 		let chat;

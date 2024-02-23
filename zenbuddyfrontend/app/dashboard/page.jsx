@@ -13,6 +13,7 @@ import VideoCall from "../../components/ui/VideoCall";
 import ChatPage from "../../components/ui/ChatPage";
 import AiChat from "../../components/ui/AiChat";
 import Quiz from "../../components/ui/Quiz";
+import Meditate from "../../components/ui/Meditate";
 import Todo from "../../components/ui/Todo";
 import Navbar from "../../components/ui/Db-Navbar";
 import "./dashboard.css";
@@ -382,16 +383,19 @@ const Dashboard = () => {
 		<>
 			{isUserLoggedIn ? (
 				<div className="main-page-wrapper">
-					{currentScreen !== "quiz" ? (
+					{currentScreen !== "quiz" &&
+					currentScreen !== "meditate" ? (
 						<Navbar userDetail={userData}></Navbar>
 					) : null}
 
 					<div
 						className="main-page-inner-wrapper"
 						style={
-							currentScreen !== "quiz"
-								? { height: "88%" }
-								: { height: "100%" }
+							// currentScreen !== "quiz"
+							currentScreen !== "quiz" &&
+							currentScreen !== "meditate"
+								? { height: "88%", width: "90%" }
+								: { height: "100%", width: "100%" }
 						}>
 						{currentScreen === null ? (
 							<div className="dashboard">
@@ -1491,6 +1495,9 @@ const Dashboard = () => {
 						) : null}
 						{currentScreen === "todo" ? <Todo></Todo> : null}
 						{currentScreen === "quiz" ? <Quiz></Quiz> : null}
+						{currentScreen === "meditate" ? (
+							<Meditate></Meditate>
+						) : null}
 					</div>
 				</div>
 			) : null}
