@@ -1395,6 +1395,7 @@ select option {
 		position: absolute;
 		/* left: none; */
 		/* right: 0; */
+		bottom: 100px;
 		left: 50%;
 		transform: translateX(-50%) !important;
 

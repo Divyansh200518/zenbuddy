@@ -47,6 +47,58 @@ var chats = {};
 var friends = {};
 var aiHistory = {};
 
+async function getMessages(email) {
+	return new Promise(async (resolve, reject) => {
+		const userRef = db.collection("chats").doc(email);
+		const doc = await userRef.get();
+		if (!doc.exists) {
+			resolve({ status: false });
+			return;
+		}
+		resolve({ data: doc, status: true });
+		console.log(doc);
+	});
+}
+
+setInterval(async () => {
+	console.log({ chats });
+
+	await setBufferChat();
+
+	console.log({ chats });
+}, 10000);
+
+async function setBufferChat() {
+	return new Promise(async (resolve, reject) => {
+		const chatsCollection = db.collection("chats");
+
+		// Loop through each chat and update Firestore
+		await Object.keys(chats).forEach(async (senderEmail) => {
+			const senderDocRef = chatsCollection.doc(senderEmail);
+
+			var dbChat = await senderDocRef.get();
+
+			var senderChat = (await dbChat[senderEmail].data()) || {};
+			console.log({ senderChat });
+			// var senderReceiverChat = senderChat[receiver.email] || [];
+
+			// if (receiver.email !== sender.email) {
+			// 	receiverSenderChat.push(data);
+			// }
+			// senderReceiverChat.push(data);
+
+			// dbChat[sender.email][receiver.email] = senderReceiverChat;
+			// dbChat[receiver.email][sender.email] = receiverSenderChat;
+
+			console.log({ dbChat });
+
+			// Get the existing data
+		});
+
+		// chats = {};
+	});
+}
+
 async function ai(prompt, email) {
 	return new Promise(async (resolve, reject) => {
 		let chat;
@@ -240,6 +292,17 @@ io.on("connection", (socket) => {
 });
 app.get("/", (req, res) => {
 	res.send("Hello World!");
+});
+
+app.post("/messages", async (req, res) => {
+	const email = req.body.email;
+	console.log(email);
+	if (!email) {
+		res.send({ status: false });
+		return;
+	}
+	const messages = getMessages(email);
+	console.log(messages);
 });
 
 app.post("/sessionLogin", async (req, res) => {

@@ -155,9 +155,9 @@ const Profile = (userDetail) => {
 		<div className="profile-parent-container">
 			{clicked ? (
 				<motion.div
-					initial={{ opacity: 0, y: 10 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					exist={{ opacity: 1, y: 0 }}
+					initial={{ opacity: 0, y: 0, x: "20%" }}
+					whileInView={{ opacity: 1, y: 0, x: "30%" }}
+					exist={{ opacity: 1, y: 0, x: "20%" }}
 					className="profile-info-container">
 					<div className="profile-info">
 						<img

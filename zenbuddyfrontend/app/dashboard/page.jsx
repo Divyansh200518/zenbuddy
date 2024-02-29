@@ -543,6 +543,9 @@ const Dashboard = () => {
 												</div>
 											</div>
 											<Button
+												onClick={() => {
+													router.push("?s=quiz");
+												}}
 												type={"fill"}
 												style={{
 													width: "100%",
