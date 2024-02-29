@@ -60,13 +60,13 @@ async function getMessages(email) {
 	});
 }
 
-setInterval(async () => {
-	console.log({ chats });
+// setInterval(async () => {
+// 	console.log({ chats });
 
-	await setBufferChat();
+// 	await setBufferChat();
 
-	console.log({ chats });
-}, 10000);
+// 	console.log({ chats });
+// }, 10000);
 
 async function setBufferChat() {
 	return new Promise(async (resolve, reject) => {
