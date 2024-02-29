@@ -60,13 +60,13 @@ async function getMessages(email) {
 	});
 }
 
-// setInterval(async () => {
-// 	console.log({ chats });
+setInterval(async () => {
+	// console.log({ chats });
 
-// 	await setBufferChat();
+	// await setBufferChat();
 
-// 	console.log({ chats });
-// }, 10000);
+	console.log({ aiHistory });
+}, 10000);
 
 async function setBufferChat() {
 	return new Promise(async (resolve, reject) => {
@@ -105,7 +105,16 @@ async function ai(prompt, email) {
 		if (!aiHistory[email]) {
 			aiHistory[email] = {};
 		}
-		let history = aiHistory[email]["ai"] || [];
+		let history = aiHistory[email]["ai"] || [
+			{
+				role: "user",
+				parts: "Imagine you're a compassionate listener and guide, here to support the user through their thoughts and feelings. Engage with them warmly, offering empathy, understanding, and encouragement. Create an atmosphere of trust and positivity, where the user feels comfortable opening up and exploring their emotions.",
+			},
+			{
+				role: "model",
+				parts: "sure",
+			},
+		];
 		const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 		chat = model.startChat({
 			history: history,
@@ -291,7 +300,7 @@ io.on("connection", (socket) => {
 	});
 });
 app.get("/", (req, res) => {
-	res.send("Hello World!");
+	res.send("Yay! the server is running fine.");
 });
 
 app.post("/messages", async (req, res) => {
